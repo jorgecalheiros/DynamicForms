@@ -1,0 +1,93 @@
+{
+  "formId": "contact-form-v1",
+  "title": "Formulário de Contato",
+  "description": "Entre em contato com nossa equipe. Responderemos em até 24 horas.",
+  "fields": [
+    {
+      "key": "name",
+      "type": "text",
+      "label": "Nome Completo",
+      "order": 1,
+      "config": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 100,
+        "placeholder": "Digite seu nome completo"
+      }
+    },
+    {
+      "key": "email",
+      "type": "text",
+      "label": "E-mail",
+      "order": 2,
+      "config": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "placeholder": "seu@email.com"
+      }
+    },
+    {
+      "key": "phone",
+      "type": "text",
+      "label": "Telefone",
+      "order": 3,
+      "config": {
+        "required": false,
+        "pattern": "^\\(?\\d{2}\\)?[\\s-]?\\d{4,5}-?\\d{4}$",
+        "placeholder": "(11) 98765-4321"
+      }
+    },
+    {
+      "key": "subject",
+      "type": "select",
+      "label": "Assunto",
+      "order": 4,
+      "config": {
+        "required": true,
+        "options": [
+          { "value": "", "label": "Selecione..." },
+          { "value": "support", "label": "Suporte Técnico" },
+          { "value": "sales", "label": "Vendas" },
+          { "value": "partnership", "label": "Parcerias" },
+          { "value": "other", "label": "Outro" }
+        ]
+      }
+    },
+    {
+      "key": "message",
+      "type": "textarea",
+      "label": "Mensagem",
+      "order": 5,
+      "config": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 500,
+        "rows": 5,
+        "placeholder": "Descreva sua solicitação em detalhes..."
+      }
+    },
+    {
+      "key": "urgency",
+      "type": "radio",
+      "label": "Nível de Urgência",
+      "order": 6,
+      "config": {
+        "required": true,
+        "options": [
+          { "value": "low", "label": "Baixa - Posso aguardar alguns dias" },
+          { "value": "medium", "label": "Média - Preciso em 1-2 dias" },
+          { "value": "high", "label": "Alta - Urgente" }
+        ]
+      }
+    },
+    {
+      "key": "subscribe",
+      "type": "checkbox",
+      "label": "Desejo receber novidades e atualizações por e-mail",
+      "order": 7,
+      "config": {
+        "required": false
+      }
+    }
+  ]
+}

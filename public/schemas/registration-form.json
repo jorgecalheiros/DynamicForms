@@ -1,0 +1,90 @@
+{
+  "formId": "registration-form-v1",
+  "title": "Cadastro de Usuário",
+  "description": "Crie sua conta em menos de 1 minuto",
+  "fields": [
+    {
+      "key": "full_name",
+      "type": "text",
+      "label": "Nome Completo",
+      "order": 1,
+      "config": {
+        "required": true,
+        "minLength": 5,
+        "maxLength": 100,
+        "placeholder": "Ex: João da Silva"
+      }
+    },
+    {
+      "key": "email",
+      "type": "text",
+      "label": "E-mail",
+      "order": 2,
+      "config": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "placeholder": "seu.email@exemplo.com"
+      }
+    },
+    {
+      "key": "birth_date",
+      "type": "date",
+      "label": "Data de Nascimento",
+      "order": 3,
+      "config": {
+        "required": true,
+        "max": "2010-01-01",
+        "min": "1920-01-01"
+      }
+    },
+    {
+      "key": "age",
+      "type": "number",
+      "label": "Idade",
+      "order": 4,
+      "config": {
+        "required": true,
+        "min": 18,
+        "max": 120,
+        "placeholder": "Ex: 25"
+      }
+    },
+    {
+      "key": "country",
+      "type": "select",
+      "label": "País",
+      "order": 5,
+      "config": {
+        "required": true,
+        "options": [
+          { "value": "", "label": "Selecione seu país..." },
+          { "value": "BR", "label": "Brasil" },
+          { "value": "US", "label": "Estados Unidos" },
+          { "value": "PT", "label": "Portugal" },
+          { "value": "ES", "label": "Espanha" }
+        ]
+      }
+    },
+    {
+      "key": "bio",
+      "type": "textarea",
+      "label": "Biografia (opcional)",
+      "order": 6,
+      "config": {
+        "required": false,
+        "maxLength": 300,
+        "rows": 3,
+        "placeholder": "Conte um pouco sobre você..."
+      }
+    },
+    {
+      "key": "terms",
+      "type": "checkbox",
+      "label": "Aceito os termos de uso e política de privacidade",
+      "order": 7,
+      "config": {
+        "required": true
+      }
+    }
+  ]
+}

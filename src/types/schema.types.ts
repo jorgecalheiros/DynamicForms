@@ -1,0 +1,74 @@
+// Base config shared across field types
+export interface BaseFieldConfig {
+  required?: boolean
+  placeholder?: string
+}
+
+export interface TextFieldConfig extends BaseFieldConfig {
+  minLength?: number
+  maxLength?: number
+  pattern?: string
+}
+
+export interface NumberFieldConfig extends BaseFieldConfig {
+  min?: number
+  max?: number
+  step?: number
+}
+
+export interface SelectOption {
+  value: string
+  label: string
+}
+
+export interface SelectFieldConfig extends BaseFieldConfig {
+  multiple?: boolean
+  options: SelectOption[]
+}
+
+export interface TextAreaFieldConfig extends BaseFieldConfig {
+  minLength?: number
+  maxLength?: number
+  rows?: number
+}
+
+export interface CheckboxFieldConfig {
+  required?: boolean
+}
+
+export interface RadioFieldConfig {
+  required?: boolean
+  options: SelectOption[]
+}
+
+export interface DateFieldConfig {
+  required?: boolean
+  min?: string
+  max?: string
+}
+
+export type FieldType = 'text' | 'number' | 'select' | 'textarea' | 'checkbox' | 'radio' | 'date'
+
+export type FieldConfig =
+  | TextFieldConfig
+  | NumberFieldConfig
+  | SelectFieldConfig
+  | TextAreaFieldConfig
+  | CheckboxFieldConfig
+  | RadioFieldConfig
+  | DateFieldConfig
+
+export interface FormField {
+  key: string
+  type: FieldType
+  label: string
+  order: number
+  config: FieldConfig
+}
+
+export interface FormSchema {
+  formId: string
+  title: string
+  description?: string
+  fields: FormField[]
+}

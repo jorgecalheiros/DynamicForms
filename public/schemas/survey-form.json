@@ -1,0 +1,71 @@
+{
+  "formId": "survey-form-v1",
+  "title": "Pesquisa de Satisfação",
+  "description": "Sua opinião é muito importante para nós!",
+  "fields": [
+    {
+      "key": "name",
+      "type": "text",
+      "label": "Nome (opcional)",
+      "order": 1,
+      "config": {
+        "required": false,
+        "placeholder": "Seu nome"
+      }
+    },
+    {
+      "key": "rating",
+      "type": "radio",
+      "label": "Como você avalia nosso serviço?",
+      "order": 2,
+      "config": {
+        "required": true,
+        "options": [
+          { "value": "5", "label": "⭐⭐⭐⭐⭐ Excelente" },
+          { "value": "4", "label": "⭐⭐⭐⭐ Muito Bom" },
+          { "value": "3", "label": "⭐⭐⭐ Bom" },
+          { "value": "2", "label": "⭐⭐ Regular" },
+          { "value": "1", "label": "⭐ Ruim" }
+        ]
+      }
+    },
+    {
+      "key": "features",
+      "type": "select",
+      "label": "Quais recursos você mais utiliza? (múltipla escolha)",
+      "order": 3,
+      "config": {
+        "required": false,
+        "multiple": true,
+        "options": [
+          { "value": "dashboard", "label": "Dashboard" },
+          { "value": "reports", "label": "Relatórios" },
+          { "value": "integrations", "label": "Integrações" },
+          { "value": "mobile", "label": "App Mobile" },
+          { "value": "api", "label": "API" }
+        ]
+      }
+    },
+    {
+      "key": "would_recommend",
+      "type": "checkbox",
+      "label": "Eu recomendaria este produto para outras pessoas",
+      "order": 4,
+      "config": {
+        "required": false
+      }
+    },
+    {
+      "key": "comments",
+      "type": "textarea",
+      "label": "Comentários adicionais",
+      "order": 5,
+      "config": {
+        "required": false,
+        "maxLength": 1000,
+        "rows": 4,
+        "placeholder": "Compartilhe suas sugestões ou feedback..."
+      }
+    }
+  ]
+}
