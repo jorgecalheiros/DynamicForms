@@ -7,6 +7,7 @@ const FORM_OPTIONS = [
   { id: 'contact-form', label: 'Formulário de Contato', path: '/schemas/contact-form.json' },
   { id: 'survey-form', label: 'Pesquisa de Satisfação', path: '/schemas/survey-form.json' },
   { id: 'registration-form', label: 'Cadastro de Usuário', path: '/schemas/registration-form.json' },
+  { id: 'dependentes-form', label: 'Cadastro de Dependentes', path: '/schemas/dependentes-form.json' },
 ]
 
 export default function App() {

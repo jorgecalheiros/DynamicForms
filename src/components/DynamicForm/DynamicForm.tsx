@@ -4,12 +4,21 @@ import type { FormSchema } from '../../types/schema.types'
 import { FieldRenderer } from './FieldRenderer'
 import { SubmitButton } from './SubmitButton'
 import { SuccessModal } from '../ui/SuccessModal'
+import { RepeaterForm } from './RepeaterForm'
 
 interface DynamicFormProps {
   schema: FormSchema
 }
 
 export function DynamicForm({ schema }: DynamicFormProps) {
+  if (schema.type === 'repeater') {
+    return <RepeaterForm schema={schema} />
+  }
+
+  return <DefaultForm schema={schema} />
+}
+
+function DefaultForm({ schema }: { schema: FormSchema }) {
   const [submittedData, setSubmittedData] = useState<Record<string, unknown> | null>(null)
 
   const {
@@ -20,7 +29,6 @@ export function DynamicForm({ schema }: DynamicFormProps) {
   } = useForm<Record<string, unknown>>()
 
   const onSubmit = async (data: Record<string, unknown>) => {
-    // Simulate async submission
     await new Promise((resolve) => setTimeout(resolve, 800))
     console.log(`[${schema.formId}] Form submitted:`, data)
     setSubmittedData(data)

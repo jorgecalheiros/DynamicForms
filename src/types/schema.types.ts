@@ -49,6 +49,25 @@ export interface DateFieldConfig {
 
 export type FieldType = 'text' | 'number' | 'select' | 'textarea' | 'checkbox' | 'radio' | 'date'
 
+export type FormType = 'default' | 'repeater'
+
+export interface RepeaterConfig {
+  minEntries?: number
+  maxEntries?: number
+  addButtonText?: string
+  itemLabel?: string
+  allowReorder?: boolean
+  confirmDelete?: boolean
+  showCounter?: boolean
+}
+
+export interface RepeaterEntry {
+  id: string
+  data: Record<string, unknown>
+  timestamp: number
+  isValid: boolean
+}
+
 export type FieldConfig =
   | TextFieldConfig
   | NumberFieldConfig
@@ -70,5 +89,7 @@ export interface FormSchema {
   formId: string
   title: string
   description?: string
+  type?: FormType
+  repeaterConfig?: RepeaterConfig
   fields: FormField[]
 }
