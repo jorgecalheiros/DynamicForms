@@ -31,15 +31,15 @@
       "type": "select",
       "label": "Parentesco",
       "order": 3,
+      "options": [
+        { "value": "spouse", "label": "Cônjuge" },
+        { "value": "child", "label": "Filho(a)" },
+        { "value": "parent", "label": "Pai/Mãe" },
+        { "value": "sibling", "label": "Irmão/Irmã" },
+        { "value": "other", "label": "Outro" }
+      ],
       "config": {
-        "required": true,
-        "options": [
-          { "value": "spouse", "label": "Cônjuge" },
-          { "value": "child", "label": "Filho(a)" },
-          { "value": "parent", "label": "Pai/Mãe" },
-          { "value": "sibling", "label": "Irmão/Irmã" },
-          { "value": "other", "label": "Outro" }
-        ]
+        "required": true
       }
     }
   ]

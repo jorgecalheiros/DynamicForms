@@ -1,6 +1,6 @@
 import type { UseFormRegister, FieldError } from 'react-hook-form'
 import clsx from 'clsx'
-import type { SelectFieldConfig } from '../../types/schema.types'
+import type { SelectFieldConfig, SelectOption } from '../../types/schema.types'
 import { FieldWrapper } from './FieldWrapper'
 import { buildValidationRules } from '../../utils/validationRules'
 
@@ -8,11 +8,12 @@ interface SelectFieldProps {
   fieldKey: string
   label: string
   config: SelectFieldConfig
+  options: SelectOption[]
   register: UseFormRegister<Record<string, unknown>>
   error?: FieldError
 }
 
-export function SelectField({ fieldKey, label, config, register, error }: SelectFieldProps) {
+export function SelectField({ fieldKey, label, config, options, register, error }: SelectFieldProps) {
   const rules = buildValidationRules('select', config)
 
   return (
@@ -29,7 +30,7 @@ export function SelectField({ fieldKey, label, config, register, error }: Select
         )}
         {...register(fieldKey, rules)}
       >
-        {config.options.map((opt) => (
+        {options.map((opt) => (
           <option key={opt.value} value={opt.value}>
             {opt.label}
           </option>

@@ -53,6 +53,7 @@ export function FieldRenderer({ field, register, errors }: FieldRendererProps) {
         <SelectField
           {...commonProps}
           config={field.config as SelectFieldConfig}
+          options={field.options ?? []}
           error={error as import('react-hook-form').FieldError | undefined}
         />
       )
@@ -77,6 +78,7 @@ export function FieldRenderer({ field, register, errors }: FieldRendererProps) {
         <RadioField
           {...commonProps}
           config={field.config as RadioFieldConfig}
+          options={field.options ?? []}
           error={error as import('react-hook-form').FieldError | undefined}
         />
       )

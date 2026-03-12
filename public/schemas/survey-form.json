@@ -18,15 +18,15 @@
       "type": "radio",
       "label": "Como você avalia nosso serviço?",
       "order": 2,
+      "options": [
+        { "value": "5", "label": "⭐⭐⭐⭐⭐ Excelente" },
+        { "value": "4", "label": "⭐⭐⭐⭐ Muito Bom" },
+        { "value": "3", "label": "⭐⭐⭐ Bom" },
+        { "value": "2", "label": "⭐⭐ Regular" },
+        { "value": "1", "label": "⭐ Ruim" }
+      ],
       "config": {
-        "required": true,
-        "options": [
-          { "value": "5", "label": "⭐⭐⭐⭐⭐ Excelente" },
-          { "value": "4", "label": "⭐⭐⭐⭐ Muito Bom" },
-          { "value": "3", "label": "⭐⭐⭐ Bom" },
-          { "value": "2", "label": "⭐⭐ Regular" },
-          { "value": "1", "label": "⭐ Ruim" }
-        ]
+        "required": true
       }
     },
     {
@@ -34,16 +34,16 @@
       "type": "select",
       "label": "Quais recursos você mais utiliza? (múltipla escolha)",
       "order": 3,
+      "options": [
+        { "value": "dashboard", "label": "Dashboard" },
+        { "value": "reports", "label": "Relatórios" },
+        { "value": "integrations", "label": "Integrações" },
+        { "value": "mobile", "label": "App Mobile" },
+        { "value": "api", "label": "API" }
+      ],
       "config": {
         "required": false,
-        "multiple": true,
-        "options": [
-          { "value": "dashboard", "label": "Dashboard" },
-          { "value": "reports", "label": "Relatórios" },
-          { "value": "integrations", "label": "Integrações" },
-          { "value": "mobile", "label": "App Mobile" },
-          { "value": "api", "label": "API" }
-        ]
+        "multiple": true
       }
     },
     {

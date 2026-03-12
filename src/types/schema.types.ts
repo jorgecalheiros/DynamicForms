@@ -23,7 +23,6 @@ export interface SelectOption {
 
 export interface SelectFieldConfig extends BaseFieldConfig {
   multiple?: boolean
-  options: SelectOption[]
 }
 
 export interface TextAreaFieldConfig extends BaseFieldConfig {
@@ -38,7 +37,6 @@ export interface CheckboxFieldConfig {
 
 export interface RadioFieldConfig {
   required?: boolean
-  options: SelectOption[]
 }
 
 export interface DateFieldConfig {
@@ -82,6 +80,7 @@ export interface FormField {
   type: FieldType
   label: string
   order: number
+  options?: SelectOption[] | null
   config: FieldConfig
 }
 

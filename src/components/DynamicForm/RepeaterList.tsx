@@ -1,9 +1,8 @@
-import type { FormField, RepeaterEntry, SelectFieldConfig, RadioFieldConfig } from '../../types/schema.types'
+import type { FormField, RepeaterEntry } from '../../types/schema.types'
 
 function getDisplayValue(field: FormField, value: unknown): string {
   if (field.type === 'select' || field.type === 'radio') {
-    const config = field.config as SelectFieldConfig | RadioFieldConfig
-    const option = config.options?.find((opt) => opt.value === String(value))
+    const option = field.options?.find((opt) => opt.value === String(value))
     if (option) return option.label
   }
   return String(value)
