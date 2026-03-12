@@ -1,5 +1,5 @@
 interface SuccessModalProps {
-  data: Record<string, unknown>
+  data: unknown
   formTitle: string
   onClose: () => void
 }

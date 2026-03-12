@@ -56,5 +56,29 @@ export function validateSchema(data: unknown): ValidationResult {
     }
   }
 
+  // Validate type
+  const validTypes = ['default', 'repeater']
+  if (schema.type !== undefined && !validTypes.includes(schema.type as string)) {
+    errors.push(`Invalid form type: '${schema.type}'. Must be one of: ${validTypes.join(', ')}`)
+  }
+
+  // Validate repeaterConfig when type === 'repeater'
+  if (schema.type === 'repeater' && schema.repeaterConfig !== undefined) {
+    const config = schema.repeaterConfig as Record<string, unknown>
+    if (config.minEntries !== undefined && (typeof config.minEntries !== 'number' || (config.minEntries as number) < 0)) {
+      errors.push('repeaterConfig.minEntries must be a non-negative number')
+    }
+    if (config.maxEntries !== undefined && (typeof config.maxEntries !== 'number' || (config.maxEntries as number) < 1)) {
+      errors.push('repeaterConfig.maxEntries must be at least 1')
+    }
+    if (
+      typeof config.minEntries === 'number' &&
+      typeof config.maxEntries === 'number' &&
+      (config.minEntries as number) > (config.maxEntries as number)
+    ) {
+      errors.push('repeaterConfig.minEntries cannot be greater than maxEntries')
+    }
+  }
+
   return { valid: errors.length === 0, errors }
 }

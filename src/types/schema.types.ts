@@ -23,7 +23,6 @@ export interface SelectOption {
 
 export interface SelectFieldConfig extends BaseFieldConfig {
   multiple?: boolean
-  options: SelectOption[]
 }
 
 export interface TextAreaFieldConfig extends BaseFieldConfig {
@@ -38,7 +37,6 @@ export interface CheckboxFieldConfig {
 
 export interface RadioFieldConfig {
   required?: boolean
-  options: SelectOption[]
 }
 
 export interface DateFieldConfig {
@@ -48,6 +46,25 @@ export interface DateFieldConfig {
 }
 
 export type FieldType = 'text' | 'number' | 'select' | 'textarea' | 'checkbox' | 'radio' | 'date'
+
+export type FormType = 'default' | 'repeater'
+
+export interface RepeaterConfig {
+  minEntries?: number
+  maxEntries?: number
+  addButtonText?: string
+  itemLabel?: string
+  allowReorder?: boolean
+  confirmDelete?: boolean
+  showCounter?: boolean
+}
+
+export interface RepeaterEntry {
+  id: string
+  data: Record<string, unknown>
+  timestamp: number
+  isValid: boolean
+}
 
 export type FieldConfig =
   | TextFieldConfig
@@ -63,6 +80,7 @@ export interface FormField {
   type: FieldType
   label: string
   order: number
+  options?: SelectOption[] | null
   config: FieldConfig
 }
 
@@ -70,5 +88,7 @@ export interface FormSchema {
   formId: string
   title: string
   description?: string
+  type?: FormType
+  repeaterConfig?: RepeaterConfig
   fields: FormField[]
 }

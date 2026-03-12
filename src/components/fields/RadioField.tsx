@@ -1,16 +1,17 @@
 import type { UseFormRegister, FieldError } from 'react-hook-form'
-import type { RadioFieldConfig } from '../../types/schema.types'
+import type { RadioFieldConfig, SelectOption } from '../../types/schema.types'
 import { buildValidationRules } from '../../utils/validationRules'
 
 interface RadioFieldProps {
   fieldKey: string
   label: string
   config: RadioFieldConfig
+  options: SelectOption[]
   register: UseFormRegister<Record<string, unknown>>
   error?: FieldError
 }
 
-export function RadioField({ fieldKey, label, config, register, error }: RadioFieldProps) {
+export function RadioField({ fieldKey, label, config, options, register, error }: RadioFieldProps) {
   const rules = buildValidationRules('radio', config)
 
   return (
@@ -21,7 +22,7 @@ export function RadioField({ fieldKey, label, config, register, error }: RadioFi
           {config.required && <span className="text-red-500 ml-1" aria-hidden="true">*</span>}
         </legend>
         <div className="space-y-2">
-          {config.options.map((opt) => (
+          {options.map((opt) => (
             <div key={opt.value} className="flex items-center gap-3">
               <input
                 id={`${fieldKey}-${opt.value}`}

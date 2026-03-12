@@ -42,15 +42,14 @@
       "type": "select",
       "label": "Assunto",
       "order": 4,
+      "options": [
+        { "value": "support", "label": "Suporte Técnico" },
+        { "value": "sales", "label": "Vendas" },
+        { "value": "partnership", "label": "Parcerias" },
+        { "value": "other", "label": "Outro" }
+      ],
       "config": {
-        "required": true,
-        "options": [
-          { "value": "", "label": "Selecione..." },
-          { "value": "support", "label": "Suporte Técnico" },
-          { "value": "sales", "label": "Vendas" },
-          { "value": "partnership", "label": "Parcerias" },
-          { "value": "other", "label": "Outro" }
-        ]
+        "required": true
       }
     },
     {
@@ -71,13 +70,13 @@
       "type": "radio",
       "label": "Nível de Urgência",
       "order": 6,
+      "options": [
+        { "value": "low", "label": "Baixa - Posso aguardar alguns dias" },
+        { "value": "medium", "label": "Média - Preciso em 1-2 dias" },
+        { "value": "high", "label": "Alta - Urgente" }
+      ],
       "config": {
-        "required": true,
-        "options": [
-          { "value": "low", "label": "Baixa - Posso aguardar alguns dias" },
-          { "value": "medium", "label": "Média - Preciso em 1-2 dias" },
-          { "value": "high", "label": "Alta - Urgente" }
-        ]
+        "required": true
       }
     },
     {

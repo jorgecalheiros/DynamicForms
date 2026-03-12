@@ -1,0 +1,46 @@
+{
+  "formId": "dependentes-form",
+  "title": "Cadastro de Dependentes",
+  "description": "Adicione todos os seus dependentes",
+  "type": "repeater",
+  "repeaterConfig": {
+    "minEntries": 0,
+    "maxEntries": 10,
+    "addButtonText": "Adicionar outro dependente",
+    "itemLabel": "Dependente",
+    "confirmDelete": true,
+    "showCounter": true
+  },
+  "fields": [
+    {
+      "key": "name",
+      "type": "text",
+      "label": "Nome Completo",
+      "order": 1,
+      "config": { "required": true, "minLength": 3, "maxLength": 100, "placeholder": "Nome completo do dependente" }
+    },
+    {
+      "key": "age",
+      "type": "number",
+      "label": "Idade",
+      "order": 2,
+      "config": { "required": true, "min": 0, "max": 120, "placeholder": "Idade" }
+    },
+    {
+      "key": "relationship",
+      "type": "select",
+      "label": "Parentesco",
+      "order": 3,
+      "options": [
+        { "value": "spouse", "label": "Cônjuge" },
+        { "value": "child", "label": "Filho(a)" },
+        { "value": "parent", "label": "Pai/Mãe" },
+        { "value": "sibling", "label": "Irmão/Irmã" },
+        { "value": "other", "label": "Outro" }
+      ],
+      "config": {
+        "required": true
+      }
+    }
+  ]
+}

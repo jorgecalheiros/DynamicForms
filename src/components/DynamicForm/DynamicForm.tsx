@@ -4,14 +4,23 @@ import type { FormSchema } from '../../types/schema.types'
 import { FieldRenderer } from './FieldRenderer'
 import { SubmitButton } from './SubmitButton'
 import { SuccessModal } from '../ui/SuccessModal'
+import { RepeaterForm } from './RepeaterForm'
 
 export interface DynamicFormProps {
   schema: FormSchema
-  onSubmit?: (data: Record<string, unknown>) => void | Promise<void>
+  onSubmit?: (data: Record<string, unknown> | Record<string, unknown>[]) => void | Promise<void>
   className?: string
 }
 
 export function DynamicForm({ schema, onSubmit: onSubmitProp, className }: DynamicFormProps) {
+  if (schema.type === 'repeater') {
+    return <RepeaterForm schema={schema} onSubmit={onSubmitProp} className={className} />
+  }
+
+  return <DefaultForm schema={schema} onSubmit={onSubmitProp} className={className} />
+}
+
+function DefaultForm({ schema, onSubmit: onSubmitProp, className }: DynamicFormProps) {
   const [submittedData, setSubmittedData] = useState<Record<string, unknown> | null>(null)
 
   const {
