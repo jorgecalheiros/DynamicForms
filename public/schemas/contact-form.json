@@ -43,7 +43,6 @@
       "label": "Assunto",
       "order": 4,
       "options": [
-        { "value": "", "label": "Selecione..." },
         { "value": "support", "label": "Suporte Técnico" },
         { "value": "sales", "label": "Vendas" },
         { "value": "partnership", "label": "Parcerias" },

@@ -55,7 +55,6 @@
       "label": "País",
       "order": 5,
       "options": [
-        { "value": "", "label": "Selecione seu país..." },
         { "value": "BR", "label": "Brasil" },
         { "value": "US", "label": "Estados Unidos" },
         { "value": "PT", "label": "Portugal" },

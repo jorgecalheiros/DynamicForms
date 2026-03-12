@@ -30,6 +30,7 @@ export function SelectField({ fieldKey, label, config, options, register, error 
         )}
         {...register(fieldKey, rules)}
       >
+        {!config.multiple && <option value="">Selecione...</option>}
         {options.map((opt) => (
           <option key={opt.value} value={opt.value}>
             {opt.label}
